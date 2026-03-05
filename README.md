@@ -1,5 +1,7 @@
 # OpenClaw IM Bridge 🌉
 
+English | [繁體中文](README.zh-TW.md)
+
 A lightweight, host-agnostic bridge that connects your local [OpenClaw](https://github.com/openclaw/openclaw) Gateway to Instant Messaging platforms (like Telegram). 
 
 This tool brings **Interactive Approvals** and **System Monitoring** directly to your phone. Whenever your AI agent (Gemini/Claude) needs to execute a dangerous shell command, instead of checking the web dashboard, you get an instant push notification with `[✅ Approve]` and `[❌ Reject]` buttons.
