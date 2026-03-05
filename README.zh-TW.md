@@ -25,9 +25,29 @@
 - **手機優先的安全管理**：當 Agent 要求執行危險指令時，直接在手機點擊按鈕，比回電腦打開網頁儀表板更直覺、更安全。
 - **輕量化微服務架構**：純粹透過 WebSocket RPC 通訊，架構乾淨、連線穩定，完全不干擾 Agent 的思考邏輯。
 
+## 🚀 新手友善啟動指南 (一步步教學)
+
+這個工具是您 OpenClaw 系統的「夥伴程式」。請按照以下步驟設定：
+
+### 第一步：準備環境
+- **安裝 Node.js**：前往 [nodejs.org](https://nodejs.org/) 下載並安裝。
+- **確保 OpenClaw 已啟動**：請確認您的電腦已經執行了 `openclaw gateway start`。
+
+### 第二步：取得金鑰
+1. **OpenClaw Token**：打開您電腦中的 `~/.openclaw/openclaw.json`。找到 `gateway.auth.token` 欄位，複製後面那串長長的英數碼。
+2. **Telegram 機器人**：在 Telegram 搜尋 `@BotFather`，輸入 `/newbot` 並完成設定以獲取 Token。
+3. **您的 ID**：在 Telegram 搜尋 `@userinfobot` 並傳訊給它，拿到您的數字 ID。
+
+### 第三步：設定與執行
+1. 下載本專案的 ZIP 檔並解壓縮。
+2. 開啟終端機（或命令提示字元），進入該資料夾（拖曳資料夾進去）。
+3. 輸入 `npm install` 並按下 Enter。
+4. 建立 `.env` 檔案並填入金鑰（參考 `.env.example`）。
+5. 輸入 `node index.js` 即可啟動！
+
 ---
 
-## 🚀 安裝指南
+## 🚀 進階安裝指南 (開發者適用)
 
 ### 1. 複製專案 (Clone)
 ```bash

@@ -25,9 +25,29 @@ Most LLM bots require you to switch to their specific framework. **OpenClaw IM B
 - **Mobile-First Security**: Why open a web dashboard on your desktop when you can approve a dangerous command with a single tap on your phone?
 - **Lightweight Microservice**: It communicates purely via WebSocket RPC, making it extremely stable and decoupled from the main Agent logic.
 
+## 🚀 Getting Started (Step-by-Step for Beginners)
+
+This tool is a "companion" for your OpenClaw system. Follow these steps to set it up:
+
+### 1. Prerequisites
+- **Install Node.js**: Download and install from [nodejs.org](https://nodejs.org/).
+- **Have OpenClaw running**: Make sure your OpenClaw gateway is already active on your machine.
+
+### 2. Get your Keys
+- **OpenClaw Token**: Open your `.openclaw/openclaw.json` file. Look for the `gateway.auth.token` field. Copy that long string.
+- **Telegram Token**: Ask [@BotFather](https://t.me/botfather) for a `/newbot` to get your Token.
+- **Your ID**: Ask [@userinfobot](https://t.me/userinfobot) for your user ID.
+
+### 3. Setup
+1. Download this project as a ZIP and unzip it.
+2. Open terminal/cmd, `cd` into the folder.
+3. Run: `npm install`
+4. Create a `.env` file and paste your Token and ID (see `.env.example`).
+5. Run: `node index.js`
+
 ---
 
-## 🚀 Installation
+## 🚀 Installation (Advanced)
 
 ### 1. Clone the repository
 ```bash
