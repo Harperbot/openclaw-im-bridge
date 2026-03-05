@@ -16,6 +16,17 @@ This tool brings **Interactive Approvals** and **System Monitoring** directly to
 - **Zero-Config Integration**: Runs alongside OpenClaw. No modifications to your existing agents or plugins required.
 - **Self-Healing**: Automatically reconnects to the Gateway if the connection is dropped.
 
+---
+
+## 💡 Why this project?
+
+Most LLM bots require you to switch to their specific framework. **OpenClaw IM Bridge** is different:
+- **Non-Intrusive**: It runs *alongside* your existing OpenClaw setup. No need to change your Agent prompts or modify core config files.
+- **Mobile-First Security**: Why open a web dashboard on your desktop when you can approve a dangerous command with a single tap on your phone?
+- **Lightweight Microservice**: It communicates purely via WebSocket RPC, making it extremely stable and decoupled from the main Agent logic.
+
+---
+
 ## 🚀 Installation
 
 ### 1. Clone the repository
