@@ -14,7 +14,8 @@ This tool brings **Interactive Approvals** and **System Monitoring** directly to
 - **Real-time Status Dashboard**: Send `/sysinfo` to get a beautifully formatted Markdown report of your host machine's CPU, Memory, and Uptime.
 - **Bridge Health Check**: Send `/status` to verify the WebSocket connection to your OpenClaw Gateway.
 - **Zero-Config Integration**: Runs alongside OpenClaw. No modifications to your existing agents or plugins required.
-- **Self-Healing**: Automatically reconnects to the Gateway if the connection is dropped.
+- **Self-Healing**: Automatically reconnects to the Gateway if the connection is dropped, with `ws.terminate()` ensuring clean reconnection on WebSocket errors.
+- **Authorized-Only Callbacks**: Telegram callback queries (button presses) are validated against your `TELEGRAM_CHAT_ID`, preventing unauthorized users from approving commands.
 
 ---
 
@@ -51,7 +52,7 @@ This tool is a "companion" for your OpenClaw system. Follow these steps to set i
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/openclaw-im-bridge.git
+git clone https://github.com/Harperbot/openclaw-im-bridge.git
 cd openclaw-im-bridge
 ```
 
