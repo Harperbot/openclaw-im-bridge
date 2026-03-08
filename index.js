@@ -89,7 +89,7 @@ function connect() {
     sendRPC("auth.token", { token: GATEWAY_TOKEN });
     
     setInterval(() => {
-      if (gatewayConnected) sendRPC("exec.approvals.get", {});
+      if (gatewayConnected && ws && ws.readyState === WebSocket.OPEN) sendRPC("exec.approvals.get", {});
     }, 5000);
   });
 
@@ -111,6 +111,7 @@ function connect() {
   ws.on('error', (err) => {
     console.error("WebSocket 錯誤:", err.message);
     gatewayConnected = false;
+    ws.terminate(); // 確保觸發 close 事件以執行重連
   });
 }
 
@@ -170,7 +171,18 @@ async function sendApprovalToTelegram(req) {
 
 // 處理來自 Telegram 按鈕的回傳
 bot.on('callback_query', async (query) => {
-  const data = JSON.parse(query.data);
+  if (query.from.id.toString() !== TELEGRAM_CHAT_ID) {
+    await bot.answerCallbackQuery(query.id, { text: "未授權操作。" });
+    return;
+  }
+  let data;
+  try {
+    data = JSON.parse(query.data);
+  } catch (e) {
+    console.error("callback_query 資料解析失敗:", e);
+    await bot.answerCallbackQuery(query.id, { text: "資料格式錯誤。" });
+    return;
+  }
   const { a, id } = data;
 
   if (a === "allow") {
